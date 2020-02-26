@@ -1,0 +1,7 @@
+1. create a folder myLearnings
+mkdir myLearnings
+
+2.Enter into the folder myLearnings
+cd myLearnings
+
+3. 
