@@ -9,16 +9,17 @@ mood = "Bored"
 
 case mood
 when "Happy"
-    return ":)"
+    puts ":)"
 when "Sad"
-    return ":("
+    puts ":("
 when "Bored"
-    return ":|"
+    puts":|"
 when "Silly"
-    return ":p"
+    puts ":p"
 else
-    return "$)"
+    puts "$)"
 end
+
 
 # 2. Write a method called ‘smile’ which prints out a smile emoji
 # -smile() should print :)
@@ -54,11 +55,11 @@ puts smile("Silly")
 
 def max(num1, num2, num3)
     if num1 > num2 && num1 > num3
-        puts "#{num1} is the maximum."
+        return "#{num1} is the maximum."
     elsif num2 > num1 && num2 > num3
-        puts "#{num2} is the maximum."
+        return "#{num2} is the maximum."
     else
-        puts "#{num3} is the maximum."
+        return "#{num3} is the maximum."
     end
 end
 
@@ -120,35 +121,51 @@ end
 puts min(200, 9, 60, -40)
 
 # 8. Use case statements and methods to recreate the app in the Gif.
-#     - The app starts with a balance of 100$
-#     - The app must greet you and ask what type of transaction to make (deposit, withdraw or check balance).
-#     - Deposits should ask how much you wish to deposit and increase your balance by that amount.
-#     - Withdraws should ask how much you wish to withdraw and increase your balance by that amount.
-#     - Check balance should simply tell you what your balance is.
-#     - Split out each case into its own method
 #     - *Just to reiterate. Use case statements and your own methods*
 
 def banking
+    # The app starts with a balance of 100$
     balance = 100
+    # The app must greet you and ask what type of transaction to make (deposit, withdraw or check balance).
     puts "Welcome to the Coder Academy banking app"
     puts "Your balance is $#{balance}"
-    
     puts "What type of transactions would you like to make? deposit, withdraw or check balance"
+  
+# Deposits should ask how much you wish to deposit and increase your balance by that amount.
+# Withdraws should ask how much you wish to withdraw and increase your balance by that amount.
+# Check balance should simply tell you what your balance is.
+    
     type = gets.chomp
+
+    def deposit
+        puts "How much would you like to deposit? "
+        amount = gets.chomp
+        balance = 100
+        balance += amount.to_i
+        return "Your new balance is #{balance}"
+    end
+    # Split out each case into its own method
     case type
     when "deposit"
-        print "How much would you like to deposit? "
-        amount = gets.chomp.to_i
-        balance += amount
-        print "Your new balance is #{balance}"
-    when "withdraw"
-        print "How much would you like to withdraw? "
-        amount = gets.chomp.to_i
-        balance -= amount
-        print "Your new balance is #{balance}"
-    when "check balance"
-        print "Your balance is #{balance}"
+        deposit
+
+    # when "withdraw"
+    #     def withdraw()
+    #         print "How much would you like to withdraw? "
+    #         amount = gets.chomp.to_i
+    #         balance -= amount
+    #         return "Your new balance is #{balance}"
+    #     end
+    #     withdraw()
+    # when "check balance"
+    #     def check()
+    #         return "Your balance is #{balance}"
+    #     end
+    #     check()
     else
-        print "You have entered an invalid operation."
+        return "You have entered an invalid operation."
     end
+
 end
+
+puts banking
