@@ -123,12 +123,13 @@ puts min(200, 9, 60, -40)
 # 8. Use case statements and methods to recreate the app in the Gif.
 #     - *Just to reiterate. Use case statements and your own methods*
 
+
 def banking
     # The app starts with a balance of 100$
-    balance = 100
+    $balance = 100
     # The app must greet you and ask what type of transaction to make (deposit, withdraw or check balance).
     puts "Welcome to the Coder Academy banking app"
-    puts "Your balance is $#{balance}"
+    puts "Your balance is $#{$balance}"
     puts "What type of transactions would you like to make? deposit, withdraw or check balance"
   
 # Deposits should ask how much you wish to deposit and increase your balance by that amount.
@@ -137,31 +138,35 @@ def banking
     
     type = gets.chomp
 
-    def deposit
+    def deposit()
         puts "How much would you like to deposit? "
         amount = gets.chomp
-        balance = 100
-        balance += amount.to_i
-        return "Your new balance is #{balance}"
+        # $balance = 100
+        $balance += amount.to_i
+        return "Your new balance is #{$balance}"
     end
+
+    def withdraw()
+        print "How much would you like to withdraw? "
+        amount = gets.chomp
+        # balance = 100
+        $balance -= amount.to_i
+        return "Your new balance is #{$balance}"
+    end
+
+    def check()
+        # balance = 100
+        return "Your balance is #{$balance}"
+    end
+
     # Split out each case into its own method
     case type
     when "deposit"
-        deposit
-
-    # when "withdraw"
-    #     def withdraw()
-    #         print "How much would you like to withdraw? "
-    #         amount = gets.chomp.to_i
-    #         balance -= amount
-    #         return "Your new balance is #{balance}"
-    #     end
-    #     withdraw()
-    # when "check balance"
-    #     def check()
-    #         return "Your balance is #{balance}"
-    #     end
-    #     check()
+        deposit()
+    when "withdraw"
+        withdraw()
+    when "check balance" 
+        check()
     else
         return "You have entered an invalid operation."
     end
