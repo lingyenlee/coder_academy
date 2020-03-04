@@ -102,35 +102,23 @@ puts price([:toothpaste, :cheese])
 def calories_in(list_of_foods)
 
     food_calories = {
-
         "pizza" => 200,
-
         "fries" => 500,
-
         "burger" => 1050
-
     }
 
     total_calories = 0
 
     for food in list_of_foods
-
-        total_calories = total_calories + food_calories[food]
-        # if food_calories.has_key?(food)
-
-           
-
-        # end
-
+        if food_calories.has_key?(food)
+            total_calories = total_calories + food_calories[food]
+        end
     end
-
     return total_calories
 
 end
 
 puts calories_in(["pizza", "burger"])
-
-
 
 
 # count the number of times each word shows up in a phrase

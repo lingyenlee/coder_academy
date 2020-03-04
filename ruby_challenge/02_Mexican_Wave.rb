@@ -14,11 +14,13 @@ def mexican_wave(str)
     i = 0
     while i < str.length
         arr = str.downcase.split("")
+        # if it is not blank continue this block
         if arr[i] != " " 
             arr[i] = arr[i].upcase
             new_arr.push(arr.join)
             i+=1
         else
+            # if it is a blank, jump to the next char
             i += 1
         end
     end

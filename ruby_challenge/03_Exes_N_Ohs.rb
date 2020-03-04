@@ -10,6 +10,7 @@
 # should return true E.g. exes_and_ohs("oOxXxoX") should return falseE.g. exes_and_ohs("zpzpzpp") 
 # should return true
 
+#!/usr/bin/env ruby
 def exes_and_ohs(str)
     arr = str.downcase.split("")
 
