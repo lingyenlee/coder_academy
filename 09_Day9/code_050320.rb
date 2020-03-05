@@ -188,15 +188,15 @@ class EighteenWheeler < Vehicle
     end
 end
 
-# class EighteenWheeler < Vehicle
-#     def initialize(kms, km_last_service)
-#         super(18, kms, km_last_service)
-#     end
+class EighteenWheeler < Vehicle
+    def initialize(kms, km_last_service)
+        super(18, kms, km_last_service)
+    end
 
-#     def needs_service?()
-#         return @kms - @km_last_service >= 3000
-#     end
-# end
+    def needs_service?()
+        return @kms - @km_last_service >= 3000
+    end
+end
 
 my_18wheeler = EighteenWheeler.new(4000, 500)
 puts "Number of wheels #{my_18wheeler.num_wheels()}"
