@@ -38,20 +38,21 @@ class ScissorsPaperRock
     # Ask a user for their selection
     def play
         # print "\n Welcome to the game of Scissors-Paper-Rock"
-        # print "\n Enter your name: "
-        # user_name = gets.chomp
+        print "\n Enter your name: "
+        user_name = gets.chomp
         until @user_score == @score_required || @computer_score  == @score_required
-            print "\nHi, please select 's' for scissors, 'p' for paper or 'r' for rock. "
-            options = ['s', 'p', 'r']
-
+            options = ['scissors', 'paper', 'rock']
+            
+            print "\nHi #{user_name}, please select 's' for scissors, 'p' for paper or 'r' for rock. "
+        
             # Display user selection:
-            @user_choice = gets.chomp
+            selected_options = gets.chomp
             
             puts "User has selected #{user_choice}."
             # p user_choice
 
             # display the computer's randomised selection:
-            options = ['s', 'p', 'r']
+            # options = ['s', 'p', 'r']
             @computer_choice = options.sample
             # p computer_choice
             puts "Computer has selected #{computer_choice}."
