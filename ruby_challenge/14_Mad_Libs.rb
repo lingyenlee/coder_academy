@@ -14,8 +14,12 @@ def get_word(prompt_text)
     return response
 end
 
-def display_rough_weather_madlib(name, place, emotion, temp_in_c, temp_in_f)
-    print  "\nRough Weather \nA Mad Libs Letter \nDear #{name}, \nIt's been a rough winter here in #{place}, the weather has been absolutly crazy, yesterday the temperature was #{temp_in_c} degrees celsius, which for you would be #{temp_in_f} degrees fahrenheit!
+def display_rough_weather_madlib(name, place, emotion, temp)
+    
+    # convert temp to F
+     f_temperature = (temp * 1.8) + 32
+
+    print  "\nRough Weather \nA Mad Libs Letter \nDear #{name}, \nIt's been a rough winter here in #{place}, the weather has been absolutly crazy, yesterday the temperature was #{temp} degrees celsius, which for you would be #{f_temperature} degrees fahrenheit!
     \nDespite all the crazy weather though, I've managed to stay #{emotion}, and am finally feeling like myself again!
 
     \nYours Truly
@@ -36,10 +40,7 @@ while play_game
     # ask user for temperature
     temperature =  get_word("Enter a number for temperature: ").to_i
 
-    # convert temp to F
-    f_temperature = (temperature * 1.8) + 32
-
-    display_rough_weather_madlib(name, place, emotion, temperature, f_temperature)
+    display_rough_weather_madlib(name, place, emotion, temperature)
 
     answer = get_word("Would you like to play again (y/n) ")
     if answer != 'y'
@@ -48,6 +49,7 @@ while play_game
 
 end
 
+"#{name} is #{temperature} old authorized to be at #{place} 
 
 
 
