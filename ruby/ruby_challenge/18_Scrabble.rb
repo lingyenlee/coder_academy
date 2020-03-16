@@ -11,23 +11,36 @@
 # E.g. word_ranking('reshow the shower') -> 'reshow'
 
 def word_ranking(str)
-    #Your code here
-    word_arr = str.split(" ")
-puts word_arr 
-
+    
+    # return empty string if it it empty 
+    if str.length == 0
+        return str
+    # else split str to an array of words
+    else
+     word_arr = str.split(" ")
+    end
+    
+    # map each letter to a score
    letter_score = {}
    letters = [*("a".."z")]
-   puts letters.to_s
    letters.each.with_index do |x, index|
         letter_score[x] = index + 1
    end
-   return letter_score
+#    return letter_score
 
-#    word_score = word_arr.map do |x|
- 
+# calculate each word
+   word_score = {}
 
-#    end
+  
+   word_arr.each do |x|
+       score = x.chars.collect {|letter| letter_score[letter] }.reduce(&:+)
+       word_score[x] = score
+   end
+
+   return word_score.key(word_score.values.max)
 
 end
 
-puts word_ranking('hi there')
+# puts word_ranking('hi there')
+# puts word_ranking('reshow the shower')
+puts word_ranking("")
