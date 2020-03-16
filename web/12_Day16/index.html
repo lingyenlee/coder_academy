@@ -1,38 +1,118 @@
+<!-- Write a basic webpage with a title of "my first site" that says "Hello World!"
+Questions: - How does whitespace affect the way the document is displayed - What happens if you remove the some of the required tags?
+ -->
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My first </title>
-</head>
-
-<body>
-    <ul>
-        <li style="font-size:large;">apple</li>
-        <hr/>
-        <li>orange</li>
-        <li>banana</li>
-
-    </ul>
-    <ol start="30">
-        <li>apple</li>
-        <li>orange</li>
-        <li>banana</li>
-    </ol>
-
-    <table>
-        <thead>
-           <th>Name</th>
-           <th>Price</th>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Toothbrush</td>
-                <td>$99.99</td>
-            </tr>
-        </tbody>
-    </table>
-</body>
-
+<html>
+    <head>
+        <title>my first site</title>
+    </head>
+    <body>
+        hello world
+    </body>
 </html>
+
+<!-- Update the site to use different sized headers and paragraphs
+Questions: - What affect does the paragraph tag have on the way the document is formatted? -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>my first site</title>
+    </head>
+    <body>
+        <h1>My First Website</h1>
+        <p>hello world my name is Mike and this is my first website</p>
+        <p>Web development is fun!</p>
+    </body>
+</html>
+<!-- 
+Add a two lists of items, one with numbers and another with bullets
+Questions: - Do you need the <ul> or <ol> tags? - Can you start the numbered list at 50 (start)? - How can you use roman numerals instead of numbers (ex. I for 1) (type) -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>my first site</title>
+    </head>
+    <body>
+        <ul>
+            <li>Apple</li>
+            <li>Orange</li>
+            <li>Peach</li>
+        </ul>
+        <h2>Contest Results</h2>
+        <ol start="50">
+            <li>Billy</li>
+            <li>Seth</li>
+            <li>Karen</li>
+        </ol>
+    </body>
+</html>
+
+<!-- Modify the above HTML to make some text bold and other text italic, and break the text up using new lines and horizontal rules. -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>my first site</title>
+    </head>
+    <body>
+        <ul>
+            <li><b>Apple</b></li>
+            <li>Orange</li>
+            <li>Peach</li>
+        </ul>
+        <br/>
+        <hr/>
+        <br/>
+        <h2>Contest Results</h2>
+        <ol start="50">
+            <li><b><i>Billy</i></b></li>
+            <li>Seth</li>
+            <li>Karen</li>
+        </ol>
+    </body>
+</html>
+<!-- 
+Add two images, one from your local file system, and one from the internet
+Questions:
+    How can you adjust the width / height of the image? -->
+
+<img src="./web/cute-puppy-1.jpg">
+<img width="200" height="100" src="https://www.missmalini.com/wp-content/uploads/2019/02/Golden-Retriever-Puppy.jpg"/>
+
+<!-- Add in a video from the local file-system -->
+
+<video width="320" height="240" controls>
+  <source src="./w1_d5.mp4" type="video/mp4">  
+</video>
+
+<!-- Add a table that displays store item names and prices.
+Questions: - What does colspan do? -->
+
+<table>
+    <thead>
+        <th>Name</th>
+        <th>Price</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Tooth Brush</td>
+            <td>$5.99</td>
+        </tr>
+        <tr>
+            <td>Toilet Paper</td>
+            <td>$100.99</td>
+        </tr>
+                <tr>
+            <td>Book</td>
+            <td>$1.99</td>
+        </tr>
+    </tbody>
+</table>
+<!-- 
+Create another HTML file called "about.html" and link to it from index.html. Also create a link to the coderacademy website
+Questions: - How can you get the link to open in a new tab? -->
+
+<a href="./about.html">About</a>
+<a href="https://coderacademy.edu.au/" target="_blank">Coder Academy</a>
