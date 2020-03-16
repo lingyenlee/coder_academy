@@ -1,20 +1,19 @@
 # Intro to CSS
 
 ## SCREENFLOW
+
 Change the colors in this error message to indicate something is wrong, give it a red background with white text
 Bonus: Use hex & rbga colors
 
-`
 <p style="color: white; background: red" >
     The username or password you entered is incorrect. Please try again!
 </p>
-`
 
 Modify the above code so it is styled using a class instead of inline styles
 Questions:
-    What's the difference between a class & an id
-    How would you style a paragraph that doesn't have a class? -->
-`
+What's the difference between a class & an id
+How would you style a paragraph that doesn't have a class? -->
+
 <style>
     .error-text {
         color: white;
@@ -25,12 +24,11 @@ Questions:
 <p class="error-text" >
     The username or password you entered is incorrect. Please try again!
 </p>
-`
+
 Modify the html/css so that the third list item is green
 Questions:
-    Do styles from a parent element translate to the child element?
+Do styles from a parent element translate to the child element?
 
-`
 <style>
     li {
         color: purple;
@@ -45,11 +43,9 @@ Questions:
     <li>Orange</li>
     <li class="green-item">Peach</li>
 </ul>
-`
 
 Change the text below to use the Courier New font, also increase the text size and adjust the font weight
 
-`
 <style>
     .address {
         font-family: "Courier New", Courier, monospace;
@@ -59,9 +55,9 @@ Change the text below to use the Courier New font, also increase the text size a
 </style>
 
 <p class="address">30 deer road, Sydney, NSW, Australia</p>
-`
-*Style the paragraphs below so they have padding and margins *
-`
+
+_Style the paragraphs below so they have padding and margins _
+
 <style>
     .address {
         padding: 20px;
@@ -71,12 +67,11 @@ Change the text below to use the Courier New font, also increase the text size a
 
 <p class="address">30 deer road, Sydney, NSW, Australia</p>
 <p class="address">50 pond street, Sydney, NSW, Australia</p>
-`
+
 Modify the div below to have different sizes (px, %, em)
 
-*Style the paragraphs below so they have padding and margins *
+_Style the paragraphs below so they have padding and margins _
 
-`
 <style>
     .box {
         width: 50%;
@@ -86,11 +81,9 @@ Modify the div below to have different sizes (px, %, em)
 
 <p class="address">30 deer road, Sydney, NSW, Australia</p>
 <p class="address">50 pond street, Sydney, NSW, Australia</p>
-`
 
 Modify the input below to have a border, border radius, and box shadow
 
-`
 <style>
     .search-box {
         border: 2px solid grey;
@@ -100,13 +93,11 @@ Modify the input below to have a border, border radius, and box shadow
 </style>
 
 <input type="text" class="search-box">
-`
 
 Modify the unordered list so the items are aligned horizontally
 Questions:
-    What's the difference between inline and inline-block displays
+What's the difference between inline and inline-block displays
 
-`
 <style>
     li {
         display: inline-block
@@ -118,11 +109,9 @@ Questions:
     <li>Orange</li>
     <li>Peach</li>
 </ul>
-`
 
 Modify the divs below to demonstrate the different position types in css (static, absolute, relative, fixed)
 
-`
 <style>
     .box {
         width: 100px;
@@ -151,12 +140,9 @@ Modify the divs below to demonstrate the different position types in css (static
 <div class="box d-absolute"></div>
 <div class="box d-relative"></div>
 <div class="box d-fixed"></div>
-`
 
 Write the code for linking to an external style sheet
 
-`
 <head>
     <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
-`
