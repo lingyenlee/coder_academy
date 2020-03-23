@@ -12,7 +12,7 @@ Bonus: Use hex & rbga colors
 Modify the above code so it is styled using a class instead of inline styles
 Questions:
 What's the difference between a class & an id
-How would you style a paragraph that doesn't have a class? -->
+How would you style a paragraph that doesn't have a class?
 
 <style>
     .error-text {

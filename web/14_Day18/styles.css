@@ -1,0 +1,6 @@
+.intro header {
+    background: url("./asset/zen.jpg") no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}

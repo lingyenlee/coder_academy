@@ -1,0 +1,70 @@
+html {
+    height: 100%;
+}
+
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.landing_page {
+    background: url("./asset/bandcover.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+}
+
+.rainbow_box {
+    border: none;
+    top: 100px;
+    height: 150px;
+    position: relative;
+}
+
+.rainbow_box a {
+    text-decoration: none;
+}
+
+.rainbow_text {
+    font-size: 100px;
+    font-family: 'Baloo Thambi 2', cursive;
+    color: whitesmoke;
+    text-align: center;
+    animation: colorRotate 6s linear 0s infinite;
+  
+}
+
+.rainbow_text_animated:hover {
+    background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow_animation 6s ease-in-out infinite;
+    background-size: 400% 100%;
+}
+
+@keyframes rainbow_animation {
+    0%,100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
+}
