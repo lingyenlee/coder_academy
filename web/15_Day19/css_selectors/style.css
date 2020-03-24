@@ -1,0 +1,60 @@
+/* -------------------table-------------------------------- */
+
+* {
+    color: grey;
+}
+
+.price {
+    background-color: orange;
+}
+
+.name {
+    background-color: yellow;
+}
+
+tbody>tr td:last-child {
+    background-color: green;
+}
+
+thead th:first-child {
+    font-size: 20px;
+}
+
+tr td:hover,
+tr th:hover {
+    border: 1px solid black;
+}
+
+a:visited {
+    color: teal;
+}
+
+a[href="/checkout"]:hover {
+    font-family: "Courier New";
+}
+
+tbody tr:nth-child(2) .price {
+    font-weight: bold;
+    color: yellow
+}
+
+/* ---------------------------input------------------------------ */
+
+input {
+    border: 3px solid black;
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px 10px 10px 0;
+    padding-left: 30px;
+    box-sizing: border-box;
+}
+
+img {
+    position: absolute;
+    left: 5px;
+    top: 8px;
+}
+
+div {
+    position: relative;
+}
