@@ -1,0 +1,53 @@
+<style>
+    selector {
+        box-shadow: 2px 2px 2px red;
+        background: yellow;
+    }
+
+    /* ul > li ==> ">" selects direct descendant of ul */
+    /* ul > li > input  ==> Any inputs inside a li inside a ul */
+    /* p + h2 ==> "+" selects directly after Any h2s that are directly after a paragraph */
+
+    /* attribute eg type, href, titile, class */
+    /* [title] ==> use square brackets. Any elements with a 'title' attribute */
+    /* [href] ==> Any elements with an href */
+    /* [title="lemons"] ==> Any elements with a title of lemons */
+    /* [title*="lem"] use * for any with lem*/
+    /* [href="/apples"] ==> Any links with the '/apples' href */
+
+    /* input:checked ==> use ":" psuedo class Any checkboxes which are currently checked */
+
+    /* input:focus ==> Any textboxes that are focused in */
+
+    /* h2:hover ==> Any h2s that are hovered over */
+    h2:hover {
+        background: yellow;
+        transition: 5s;
+    }
+
+    /* ul > li:first-child ==> The first child of the ul */
+
+    /* ul > li:last-child ==> The last child of the ul */
+
+    /* ul > li:nth-child(2) ==> The 2ns child of the ul */
+
+    /* a:visited ==> Any links that have been visited already */
+
+    /* .content li ==> "space" selects any. Any lis that are descendents of 'content' */
+
+    /* .content > li ==> Any lis that are direct descendents of 'content' */
+</style>
+
+<h1 id="title">CSS Tutorial</h1>
+<div class="content">
+    <p class="description">CSS selectors will supercharge your CSS game!</p>
+
+    <h2>Fruits</h2>
+    <ul class="list">
+        <li><a href="/apples">Apples</a></li>
+        <li>Orangess <input type="text"></li>
+        <li><input type="checkbox"> Bananas</li>
+        <li title="lemons">Lemons</li>
+    </ul>
+    <li>More items available in store</li>
+</div>

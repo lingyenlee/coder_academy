@@ -1,0 +1,24 @@
+<style>
+    .container {
+        /* position: relative; */
+        width: 500px; background: lightgrey; border: 5px solid black;}
+    .box {width: 100px; height: 100px;}
+    .red {background: red;}
+    .orange {
+        /* give a position relative so it can be moved */
+        position: absolute;
+         /* left: 100px; */
+         /* 0 px relative to body if container
+         class is not given relative */
+        top: 0px;
+        background: orange;}
+    .yellow {background: yellow;}
+    .green {background: green;}
+  </style>
+  
+  <div class="container">
+    <div class="box red"></div>
+    <div class="box orange"></div>
+    <div class="box yellow"></div>
+    <div class="box green"></div>
+  </div>

@@ -1,0 +1,27 @@
+<style>
+    .blue-box {
+        width: 100px;
+        height: 100px;
+        background: blue;
+    }
+
+    .red-box {
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+        background: red;
+        /* not affected by padding */
+        box-sizing: border-box;
+    }
+
+    input {
+        width: 100px;
+        border: 1px solid black;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+</style>
+
+<div class="blue-box"></div>
+<div class="red-box"></div>
+<input type="text">
