@@ -142,34 +142,34 @@ name, email, phone, job, title
 # Creata a class
 
 
-class Movie
-    attr_accessor :title, :duration, :rating
+# class Movie
+#     attr_accessor :title, :duration, :rating
 
-    def initialize(title, duration, rating)
-        @title = title
-        @duration = duration
-        @rating = rating
-    end
+#     def initialize(title, duration, rating)
+#         @title = title
+#         @duration = duration
+#         @rating = rating
+#     end
 
-    # modify the rating 
-    # ruby creates a getting method- get the rating
-    # Getter
-    def rating
-        return "rated #{@rating}"
-    end
-    # ruby creates a setting 
-    # Setter
-    def rating=(new_rating)
-        @rating = ['G', 'PG', 'PG-13', 'R'].include?(new_rating) ? new_rating : "NR"
-    end
+#     # modify the rating 
+#     # ruby creates a getting method- get the rating
+#     # Getter
+#     def rating
+#         return "rated #{@rating}"
+#     end
+#     # ruby creates a setting 
+#     # Setter
+#     def rating=(new_rating)
+#         @rating = ['G', 'PG', 'PG-13', 'R'].include?(new_rating) ? new_rating : "NR"
+#     end
 
-end
+# end
 
-dark_knight = Movie.new("The Dark Knight", 200, "J")
+# dark_knight = Movie.new("The Dark Knight", 200, "J")
 
-dark_knight.rating = "Y"
+# dark_knight.rating = "Y"
 
-puts dark_knight.rating
+# puts dark_knight.rating
 
 # class Movie
 #     attr_accessor :title, :duration, :rating
@@ -190,3 +190,12 @@ puts dark_knight.rating
 
 # movie_with_invalid_rating = Movie.new("Dark Knight", 200, "Y")
 # puts movie_with_invalid_rating.rating    # NR
+
+
+class Book
+
+    attr_accessor :title
+end
+
+book1 = Book.new
+puts book1.title = "Hello World"
