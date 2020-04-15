@@ -4,6 +4,16 @@ Rails.application.routes.draw do
   get "/books", to: "books#index"
   get "/books/:id", to: "books#show"
   post "/books/new", to: "books#create"
-  put "books/update", to: "books#update"
-  delete "books/:id", to: "books#destroy"
+  put "/books/:id", to: "books#update"
+  
+  # get "/", to: "pages#index", as: "index"
+  # get "/about", to: "pages#about", as: "about"
+  
+  get "/products", to: "products#index"
+
+  get "/", to: "examples#home", as: "home"
+  get "/about", to: "examples#about", as: "about"
+
+
+  
 end
