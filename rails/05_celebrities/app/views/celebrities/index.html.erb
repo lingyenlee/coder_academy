@@ -1,0 +1,18 @@
+<%= render "shared/nav_bar" %>
+
+<h2>The celebrites page</h2>
+
+   <% @celebrities.each.map do |celebrity| %>
+   
+       <p> Name: <%= celebrity['name'] %>
+        <br>
+        Well known for: <%= celebrity['notability'] %>
+         <%= render "shared/about",  name: celebrity['name'] %>
+         <%# <%= link_to("About", show_path(celebrity['name'])) %>
+        </p>
+        
+    <% end %>
+    
+
+
+
