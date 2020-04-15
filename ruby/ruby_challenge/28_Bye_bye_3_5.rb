@@ -9,8 +9,9 @@ def bye_bye_3_and_5(num)
     else
         num_array = [*1..num]
         not_d_3_5 = []
-        num_array.each.map {|x| (x % 3 != 0 && x % 5 != 0) ? not_d_3_5.push(x) : nil }
-        return not_d_3_5.to_s
+         num_array.each.map {|x| (x % 3 != 0 && x % 5 != 0) ? not_d_3_5.push(x) : nil }
+        # num_array.each.map {|x| (x % 3 != 0 && x % 5 != 0) ? x : nil }
+         return not_d_3_5.to_s
     end
 
 end
