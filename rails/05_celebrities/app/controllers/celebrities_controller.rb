@@ -51,9 +51,9 @@ class CelebritiesController < ApplicationController
     private
     def setup_data
         session[:celebrities] = [
-            { name => "Lindsay Lohan", notability=> "Parent Trap" },
-            { name => "Adam Sandler", notability => "Big Daddy" },
-            { name => "Rob Schnider", notability => "Adam Sandler" }
+            { "name" => "Lindsay Lohan", "notability"=> "Parent Trap" },
+            { "name" => "Adam Sandler", "notability" => "Big Daddy" },
+            { "name" => "Rob Schnider", "notability" => "Adam Sandler" }
         ] unless session[:celebrities]
     
         @celebrities = session[:celebrities]
