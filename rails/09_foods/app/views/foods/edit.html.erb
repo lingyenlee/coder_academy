@@ -1,0 +1,19 @@
+<%= link_to("<<< Back to List", foods_path, :class=> "back-link") %>
+<div class="Foods edit">
+  <h2>Update Food</h2>
+  <%= form_with model: @food do |f| %>
+    <table summary="Food form fields">
+      <tr>
+        <th>Name</th>
+        <td><%= f.text_field(:name) %> </td>
+      </tr>
+      <tr>
+        <th>Calories</th>
+        <td><%= f.text_field(:calories) %> </td>
+      </tr>
+    </table>
+    <div class="form-buttons">
+      <%= f.submit("Update Food") %>
+    </div>
+  <%end%>
+</div>

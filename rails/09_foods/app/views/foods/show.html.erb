@@ -1,0 +1,22 @@
+<%= link_to("<<< Back to List", foods_path, :class=> "back-link") %>
+<div class="foods show">
+  <h2>Show Food</h2>
+  <table summary="Food detail view">
+    <tr>
+      <th>Name of food</th>
+      <td><%= @food.name %> </td>
+    </tr>
+    <tr>
+      <th>Calories</th>
+      <td><%= @food.calories %> </td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @food.created_at %> </td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @food.updated_at %> </td>
+    </tr>
+  </table>
+</div>

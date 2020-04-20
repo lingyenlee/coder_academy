@@ -1,0 +1,23 @@
+<div class="foods index">
+  <h2>All foods</h2>
+  <%= link_to("Add New Food", new_food_path, :class => "action new") %>
+  <table class="listing" summary="Food list">
+    <tr class="header">
+      <th>#</th>
+      <th>Food</th>
+      <th>Calories</th>
+    </tr>
+    <% @foods.each do |food | %>
+      <tr>
+        <td><%= food.id %> </td>
+        <td> <%= food.name %> </td>
+        <td> <%= food.calories %> </td>
+        <td class="actions">
+          <%= link_to("Show", food_path(food), :class => "action show")%>
+          <%= link_to("Edit", edit_food_path(food), :class => "action edit")%>
+          <%= link_to("Delete", delete_food_path(food), :class => "action delete")%>
+        </td>
+      </tr>
+    <%end%>
+  </table>
+</div>
