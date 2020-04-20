@@ -1,0 +1,22 @@
+<div class="movies index">
+  <%= link_to("Add new movie", new_movie_path) %>
+  <h2>All movies</h2>
+  <table class="listing">
+    <tr class="header">
+      <th>#</th>
+      <th>Title</th>
+      <th>Duration (min)</th>
+    </tr>
+    <% @movies.each do |movie| %>
+      <tr>
+        <td><%= movie.id%> </td>
+        <td><%= movie.title %> </td>
+        <td><%= movie.duration%> </td>
+        <td> <%= link_to("Show", movie_path(movie)) %> </td>
+        <td> <%= link_to("Edit", edit_movie_path(movie)) %> </td>
+        <td> <%= link_to("Delete", delete_movie_path(movie)) %> </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+</div>

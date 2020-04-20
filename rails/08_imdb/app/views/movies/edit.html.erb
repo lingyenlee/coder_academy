@@ -1,0 +1,15 @@
+<%= link_to("<<< Back to movies list", movies_path) %>
+<div>
+  <h2>Update movie</h2>
+  <form action= "<%= movie_path(@movie.id) %>" method="post">
+   <input type="hidden" value="<%= form_authenticity_token %>" name="authenticity_token" />
+  <input type="hidden" name="_method" value="put" />
+  <label>Title: </label>
+  <input name="title" type="text" value="<%= @movie.title %>">
+  <br>
+  <label>Duration </label>
+  <input name="duration" type="number" value="<%= @movie.duration %>">
+  <br>
+  <button type="submit">Update</button>
+</form>
+</div>

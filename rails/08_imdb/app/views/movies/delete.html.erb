@@ -1,0 +1,16 @@
+<%= link_to("<<< Back to movies list", movies_path) %>
+<div>
+  <h2>Delete Movie</h2>
+  <form action= "/movies/<%= @movie.id %>" method ="post">
+   <input type="hidden" value="<%= form_authenticity_token %>" name="authenticity_token" />
+  <input type="hidden" name="_method" value="delete" />
+  <label>Title</label>
+  <input type="text" name="title" value="<%= @movie.title %>" />
+  <br>
+  <label>Title</label>
+  <input type="number" name="title" value="<%= @movie.duration %>" />
+  <br>
+  <h3>Are you sure want to delete this movie?</h3>
+  <button type="submit" >Confirm</button>
+</form>
+</div>

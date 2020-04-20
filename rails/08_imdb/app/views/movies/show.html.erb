@@ -1,0 +1,24 @@
+<%= link_to("<<< Back to movies list", movies_path) %>
+
+<div>
+    <h2>Show Movie</h2>
+    
+    <table>
+        <tr>
+            <th>Title: </th>
+            <td><%= @movie.title %></td>
+        </tr>
+         <tr>
+            <th>Duration: </th>
+            <td><%= @movie.duration %> min</td>
+        </tr>
+        <tr>
+            <th>Created: </th>
+            <td><%= @movie.created_at %></td>
+        </tr>
+        <tr>
+            <th>Updated: </th>
+            <td><%= @movie.updated_at %></td>
+        </tr>
+    </table>
+</div>
