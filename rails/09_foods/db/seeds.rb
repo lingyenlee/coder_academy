@@ -6,10 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-for i in 1..30 
+for i in 1..20 
     Food.create(
         name: Faker::Food.dish,
-        calories: Faker::Number.number(digits: 4)
+        calories: Faker::Number.number(digits: 4),
+        beer: Faker::Beer.name,
+        dessert: Faker::Dessert.variety
     )
     puts "Record #{i} created."
 end

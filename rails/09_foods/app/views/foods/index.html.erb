@@ -5,12 +5,16 @@
     <tr class="header">
       <th>#</th>
       <th>Food</th>
+      <th>Beer</th>
+      <th>Dessert</th>
       <th>Calories</th>
     </tr>
     <% @foods.each do |food | %>
       <tr>
         <td><%= food.id %> </td>
         <td> <%= food.name %> </td>
+        <td> <%= food.beer %> </td>
+        <td> <%= food.dessert %> </td>
         <td> <%= food.calories %> </td>
         <td class="actions">
           <%= link_to("Show", food_path(food), :class => "action show")%>
