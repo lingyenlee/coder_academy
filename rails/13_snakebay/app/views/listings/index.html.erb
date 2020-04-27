@@ -1,0 +1,26 @@
+<h1>Snake Listings</h1>
+<%  for listing in @listings %>
+  <li>
+    <%= link_to listing.title, listing_path(listing.id)%>
+    <%= image_tag listing.picture if listing.picture.attached? %>
+  </li>
+<% end %>
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Breed</th>
+        <th>Sex</th>
+        <th>Price</th>
+        <th>City</th>
+        <th>State</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+      </tr>
+    </tbody>
+  </table>
+</div>
