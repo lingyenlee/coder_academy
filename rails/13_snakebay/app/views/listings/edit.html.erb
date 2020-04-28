@@ -1,1 +1,7 @@
-Edit
+<div>
+  <span><<< <%= link_to 'Back', listings_path %></span>
+      <div>
+        <h2>Edit Listing</h2>
+        <%= render "shared/form", listing: @listing, breeds: @breeds %>
+      </div>
+    </div>

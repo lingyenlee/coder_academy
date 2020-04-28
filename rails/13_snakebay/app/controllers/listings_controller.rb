@@ -1,12 +1,18 @@
 class ListingsController < ApplicationController
-    before_action :set_listing, only: [:show, :edit, :update, :destroy]
+   
+    # given by devise, will direct to login page
+    before_action :authenticate_user!
+    # only if the listing has amend functions
+    before_action :set_user_listing, only: [:edit, :update, :destroy]
+    before_action :set_listing, only: [:show]
 
     def index
-        @listings = Listing.all
+        @listings = Listing.all.sorted
     end
 
     def show
-
+        # don't need anythinh here
+        # set_listing
     end
 
     def new
@@ -15,8 +21,12 @@ class ListingsController < ApplicationController
     end
 
     def create
+        # create the listing that belongs to the user
+        # when a listing is created, it is attached to the user object
+          @listing = current_user.listings.create(listing_params)
         #finish logic for creating a record
-        @listing = Listing.create(listing_params)
+        #  @listing = Listing.create(listing_params)
+        # if there is any error re-render to a new view
         if @listing.errors.any?
             set_breeds_and_sexes
             render "new"
@@ -27,22 +37,51 @@ class ListingsController < ApplicationController
 
     def edit
         set_breeds_and_sexes
-        @listing = Listing.new
+        set_listing
+        # @listing = Listing.new
     end
 
     def update
         #finsih logic for updating the record
+        set_listing
+        # @lisiting = Listing.update(params["id"], listing_params)
+        updated_listing = @listing.update(listing_params) 
+        # check for errors
+        if @updated_listing.errors.any?
+            set_breeds_and_sexes
+            render "edit"
+        else
+            redirect_to listing_path
+        end
+    end
+
+    def delete
+        set_listing
     end
 
     def destroy
-        
+        Listing.fin(params[:id]).destroy
+        redirect_to listings_path
         #finish logic for deleting the record
     end
 
     private
 
+    # add listing to the id
     def set_listing
         @listing = Listing.find(params[:id])
+    end
+
+    # add listing when user is sign in 
+    # attached listing that belongs to the user
+    # 
+    def set_user_listing
+        # check if user has the listing
+        @listing = current_user.listings.find(params[:id])
+# if listing is not associated to the user, redirect to listing
+        if @listing == nil
+            redirect_to listing_path
+        end
     end
 
     def set_breeds_and_sexes

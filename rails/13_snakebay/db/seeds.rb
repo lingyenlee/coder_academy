@@ -15,7 +15,7 @@ for i in 1..10
         deposit: 10,
         city: Faker::Address.city,
         state: Faker::Address.state,
-        date_of_birth: Faker::Date.between(from: 100.years.ago, to: 18.years.ago),
+        date_of_birth: Faker::Date.between(from: 2.years.ago, to: 1.month.ago),
         diet: Faker::Food.description
     )
     # l.picture.attach(io: File.open(image_data),
