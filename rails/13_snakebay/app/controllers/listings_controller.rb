@@ -13,6 +13,41 @@ class ListingsController < ApplicationController
     def show
         # don't need anythinh here
         # set_listing
+        def show
+            # all the environment, information save to the session 
+            # eg. how much, the currency...
+            session = Stripe::Checkout::Session.create(
+                # specify payment method
+                payment_method_types: ['card'],
+                # email 
+                customer_email: current_user.email,
+                # specific information what is getting charged
+                line_items: [{
+                    name: @listing.title,
+                    description: @listing.description,
+                    # by default, stripe accepts in cents, so multiply by 100
+                    amount: @listing.deposit * 100,
+                    currency: 'aud',
+                    quantity: 1,
+                }],
+                payment_intent_data: {
+                    # metadata about the charge
+                    # information used to keep track of payment
+                    # to manage responses
+                    metadata: {
+                        user_id: current_user.id,
+                        listing_id: @listing.id
+                    }
+                },
+                # where the users go after stripe, either successful or not
+                # rails has the concept of root url eg localhost:3000 -> can be configured
+                success_url: "#{root_url}payments/success?userId=#{current_user.id}&listingId=#{@listing.id}",
+                # if invalid or cancel
+                cancel_url: "#{root_url}listings"
+            )
+        # session id is equal to the session id created
+            @session_id = session.id
+        end
     end
 
     def new
