@@ -6,7 +6,11 @@ class Listing < ApplicationRecord
   belongs_to :user
 
   enum sex: { female: 0, male: 1 }
+  
   validates :sex, presence: true
+
+  # picture - refers to url 
   has_one_attached :picture
+
   scope :sorted, lambda {order(:id => :asc)}
 end

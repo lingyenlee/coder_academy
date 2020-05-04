@@ -11,8 +11,8 @@ class ListingsController < ApplicationController
     end
 
     def show
-        # don't need anythinh here
-        # set_listing
+        
+        # set_listing is called with before_action
         def show
             # all the environment, information save to the session 
             # eg. how much, the currency...
@@ -59,7 +59,7 @@ class ListingsController < ApplicationController
         # create the listing that belongs to the user
         # when a listing is created, it is attached to the user object
           @listing = current_user.listings.create(listing_params)
-        #finish logic for creating a record
+     
         #  @listing = Listing.create(listing_params)
         # if there is any error re-render to a new view
         if @listing.errors.any?
@@ -95,7 +95,7 @@ class ListingsController < ApplicationController
     end
 
     def destroy
-        Listing.fin(params[:id]).destroy
+        Listing.find(params[:id]).destroy
         redirect_to listings_path
         #finish logic for deleting the record
     end
