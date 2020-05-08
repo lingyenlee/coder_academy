@@ -1,0 +1,30 @@
+<h1>Musician Market</h1>
+<%= form_with(url: "/search", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+<%= link_to "Sell Instruments", new_listing_path%>
+<button data-stripe="donate">Donate $10</button>
+<ul>
+  <% for listing in @listings%>
+    <li>
+      <%= link_to "#{listing.title} - #{number_to_currency(listing.price)}", listing_path(listing.id) %>
+      <%= listing.title %> - <%= number_to_currency(listing.price) %>
+      <%= image_tag listing.picture, {:style => 'width: 150px;'}%>
+    <% end %>
+  </ul>
+  <script src="https://js.stripe.com/v3/"></script>
+  <script>
+    document
+    .querySelector("[data-stripe='donate']")
+    .addEventListener("click", () => {
+    const stripe = Stripe(
+    "<%= Rails.application.credentials.dig(:stripe, :public_key) %>"
+    );
+    
+    stripe.redirectToCheckout({
+    sessionId: "<%= @session_id %>"
+    });
+    });
+  </script>

@@ -1,0 +1,16 @@
+<h1><%= @listing.title %>
+  <% if @listing.picture.attached? %>
+    <%= image_tag @listing.picture, style: "width: 200px"%>
+  <% end %>
+  <%= @listing.price %>
+  <br/>
+  Seller's email <%= @listing.user.email %>
+  <% if current_user.id == @listing.user.id %>
+    <%= link_to "edit", edit_listing_path(@listing.id) %>
+    <%= form_with model: @listing, local: true, method: "delete" do |form| %>
+      <%= submit_tag "delete" %>
+    <% end %>
+  <% end %>
+  <p>
+    <%= @listing.description %>
+  </p>
