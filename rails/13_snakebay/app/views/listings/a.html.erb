@@ -1,0 +1,60 @@
+<div class="listing-container">
+  <h1>Create a listing</h1>
+  <% if @listing.errors.any? %>
+    <% @listing.errors.full_messages.each do |message| %>
+      <li style="color: red"><%= message %></li>
+    <% end %>
+  <% end %>
+  <%= form_with model: @listing, local: true do |f| %>
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: "form-control"%>
+    </div>
+    <div class="form-group">
+      <%= f.label :author%>
+      <%= f.text_field :author, placeholder: "eg Charles Dickens", class: "form-control" %>
+    </div>
+    <%# <div class="form-group"> %>
+    <%# <%= f.label :book_type%> %>
+    <%# <% @book_types.map do |option| %> %>
+      <%# <%= f.radio_button(:book_type, option)%> %>
+      <%# <%= f.label(option)%> %>
+      <%# <% end %> %>
+      <%# </div> %>
+      <div>
+        <% @empty_categories.each do |category| %>
+          <%= f.fields_for 'categories[]', category , include_id: false do |r| %>
+            <div>
+              <%= r.select :id, @categories.map{|c| [c.name, c.id] } %>
+              <%# <%= r.hidden_field :id, name: 'categories[' + @empty_categories.index(category).to_s + '][id]' %>
+            </div>
+          <% end%>
+        <% end%>
+        <%# <%= f.label :category_id  %>
+        <%# <%= f.select(:name, @categories.map{|c| [c.name]}) %> %> %>
+      </div>
+      <%# <div class="form-group"> %>
+      <%# <%= f.label :condition_id %> %>
+      <%# <div> %>
+      <%# <%= f.select :condition_id, @conditions.map{|c| [c.state, c.id]}%> %>
+      <%# </div> %>
+      <%# </div> %>
+      <%# <div class="form-group"> %>
+      <%# <%= f.label :selling_price %> %>
+      <%# <%= f.text_field :price, class: "form-control" %> %>
+      <%# </div> %>
+      <%# <div class="form-group"> %>
+      <%# <%= f.label :upload_an_image %> %>
+      <%# <%= f.file_field :picture, accept: %>
+      <%# 'image/png,image/gif,image/jpeg,image/jpg' %> %>
+      <%# </div> %>
+      <%# <div class="form-group"> %>
+      <%# <%= f.label :additional_information_about_the_book %> %>
+      <%# <%= f.text_area :description, class: "form-control"%> %>
+      <%# </div> %>
+      <div>
+        <%= f.submit "Submit"%>
+      </div>
+    <% end %>
+  </div>
+  <%# </div> %>

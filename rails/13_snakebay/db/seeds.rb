@@ -3,7 +3,7 @@ Snake.names.each do |name|
     puts "#{name} created"
 end
 
-# image_data = Rails.application.assets['images/hero.png'].
+
 
 for i in 1..10
     l = Listing.create(
