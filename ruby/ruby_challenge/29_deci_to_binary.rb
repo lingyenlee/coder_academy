@@ -8,16 +8,31 @@ def decimal_to_binary (decimal)
     # 5. continue until the quotient becomes 0
     # 6. return the binary string
      
-    # set a base case    
-    if decimal == 0
-        return 0
+    result = ""
+    while decimal > 1
+        result += (decimal % 2).to_s
+        decimal = decimal / 2
     end
-    binary = ""
-    while decimal != 0
-        binary = (decimal % 2).to_s + binary
-       decimal =  decimal /2   
-    end
-    return binary
+    result += decimal.to_s
+    return result.reverse
+    
 end
+
+def convert_to_base5(integer)
+
+    return 10 if integer == 5
+    return integer.to_s if integer <5
+
+    result = []
+    while integer > 5
+      result<< integer % 5
+      integer /= 5
+    end
+
+    result << integer
+    
+    result.reverse.join
+end
+  
 
 #puts decimal_to_binary(14)
