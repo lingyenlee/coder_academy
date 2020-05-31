@@ -44,3 +44,4 @@ def symmetric_difference(set1, set2)
 end
 
 puts symmetric_difference([1,2,3],[3,4,5]) # should return [1,2,4,5]
+

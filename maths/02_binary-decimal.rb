@@ -11,6 +11,7 @@ def binaryToDecimal(n)
         temp = temp/10 #get the digit of the digit without last digit
 
         dec_value += last_digit * base
+        # change base here accordingly
         base = base * 2
     end
 

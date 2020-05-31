@@ -1,4 +1,4 @@
-require_relative("29_deci_to_binary")
+require_relative("01_decimal-binary")
 
 def exclusive_or(num1, num2)
     # your code here
