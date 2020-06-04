@@ -11,30 +11,36 @@
   <button id="add-btn">Get a user</button>
 
   <script>
-    getRandomUser = () => {
+    const getRandomUser = () => {
       // This function uses AJAX to hit the random user API.
       // More info: https://randomuser.me
+      console.log("starting request")
 
-      var request = new XMLHttpRequest();
+      let request = new XMLHttpRequest();
+
       request.open("GET", "https://randomuser.me/api/", true);
+      
       request.onload = function () {
         /* You'll start here */
         //console.log(request.responseText)
 
-        if (request.status === 200) {
+        if (request.status >= 200 && request.status < 400) {
           parseRandomUser(request.responseText);
         } else {
-          console.log(request.status)
+          console.log("Error")
+          console.log(request)
         }
       };
 
+      request.onerror = () => {
+        console.log("Connection error")
+      };
       request.send();
     };
 
 
 
     function parseRandomUser(data) {
-
       const dataObj = JSON.parse(data);
       console.log(dataObj.results[0])
     }
