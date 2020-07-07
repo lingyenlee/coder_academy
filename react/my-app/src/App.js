@@ -1,21 +1,23 @@
-import React from 'react'
-import Counter from './components/Counter'
-import ColorPicker from './components/ColorPicker'
-import Pokemon from "./components/Pokemon"
+import React, { Component } from 'react'
+import Home from './Home';
+import Pokemon from './About';
+// import Contact from './Contact';
+import { BrowserRouter, Route} from 'react-router-dom'
 
-const App = () => {
-
-
-    return (
-        <>
-       <Pokemon pokemonName="pikachu"/>
-       <Pokemon pokemonName="charmander"/>
-       <Pokemon pokemonName="geodude"/>
-         {/* <Counter/> */}
-
-         {/* <ColorPicker initialTextColor="green"/> */}
-        </>
-    )
+export class App extends Component {
+    render() {
+        return (
+            <BrowserRouter>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/pokemon/:pokemonName" component={Pokemon} />
+                {/* <Route exact path="/" render={props => <Home data="myData"/>}/> */}
+                {/* <Route exact path="/contact" component={Contact} /> */}
+                {/* <Link to="/"><button>Home</button></Link>
+                <Link to="/contact"><button>Contact</button></Link>
+                <Link to="/about/3"><button>About</button></Link> */}
+            </BrowserRouter>
+        )
+    }
 }
 
 export default App

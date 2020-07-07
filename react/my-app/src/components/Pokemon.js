@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import axios from "axios"
+// import axios from "axios"
 
 class Pokemon extends Component {
     constructor(props) {
@@ -9,16 +9,16 @@ class Pokemon extends Component {
         }
     }
 
-    async componentDidMount() {
-        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${this.props.pokemonName}`)
-        const pokemonData = response.data
-        this.setState({
-            pokemon: pokemonData
-        })
+    // async componentDidMount() {
+    //     const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${this.props.pokemonName}`)
+    //     const pokemonData = response.data
+    //     this.setState({
+    //         pokemon: pokemonData
+    //     })
         
-        console.log(response)
+    //     console.log(response)
 
-    }
+    // }
 
     render() {
         return (
